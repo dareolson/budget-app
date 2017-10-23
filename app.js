@@ -122,7 +122,8 @@ var UIController = (function() {
 		budgetLabel: '.budget__value',
 		incomeLabel: '.budget__income--value',
 		expensesLabel: '.budget__expenses--value',
-		percentageLabel: '.budget__expenses--percentage'
+		percentageLabel: '.budget__expenses--percentage',
+		container: '.container'
 	};
 
 	return {
@@ -217,6 +218,7 @@ var UIController = (function() {
 				cntrlAddItem();
 			}
 		});
+			document.querySelector(DOM.container).addEventListener('click', cntrlDeleteItem);
 	};
 
 	var updateBudget = function(){
@@ -257,6 +259,12 @@ var UIController = (function() {
 		} else {
 			UICntrl.clearFields();
 		}
+
+	};
+
+	var cntrlDeleteItem = function(event){
+			console.log(event.target.parentNode.parentNode.parentNode.parentNode.id);
+
 
 	};
 
